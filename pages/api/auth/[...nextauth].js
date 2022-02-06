@@ -3,6 +3,7 @@ import SpotifyProvider from "next-auth/providers/spotify"
 import spotifyApi, { LOGIN_URL } from "../../../lib/spotify"
 
 
+
 async function refreshAccessToken(token) {
   try {
 
@@ -16,7 +17,7 @@ async function refreshAccessToken(token) {
       ...token,
       accessToken: refreshedToken.access_token,
       accessTokenExpires: Date.now + refreshedToken.expires_in * 1000, //= 1 hour as 3600 returns from spotify Api
-      refreshToken: refreshedToken.refresh_token ?? token,refreshToken,
+      refreshToken: refreshedToken.refresh_token ?? token.refreshToken,
       //Replace if new one came back else fall back to old refresh token
     };
 
