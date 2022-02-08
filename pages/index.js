@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Sidebar from '../components/Sidebar'
+import Sidebar from '../components/Sidebar';
+import Center from "../components/Center";
 
 export default function Home() {
   return (
@@ -8,10 +9,9 @@ export default function Home() {
         <title>Jockey</title>
       </Head>
 
-      <main className="">
+      <main className="flex">
         <Sidebar/>
-        {/*center */}
-
+        <Center/>
       </main>
 
       <div>{/* Player */}</div>
